@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ObjectDetectionPage from "./pages/ObjectDetection";
 import VideoTranscriptPage from "./pages/VideoTranscript";
 import NotFound from "./pages/NotFound";
-import FirstLiveStream from "./pages/FirstLiveStream";
+import LiveStreamPage from "./pages/LiveStream";
 
 const queryClient = new QueryClient();
 
@@ -17,8 +17,8 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<VideoTranscriptPage />} />
-          <Route path="/livestream" element={<FirstLiveStream />} />
+          <Route path="/" element={<LiveStreamPage />} />
+          <Route path="/livestream" element={<LiveStreamPage />} />
           <Route path="/transcription" element={<VideoTranscriptPage />} />
           <Route path="/object-detection" element={<ObjectDetectionPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

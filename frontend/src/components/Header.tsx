@@ -1,7 +1,7 @@
 export default function Header() {
   return (
     <header className="bg-black text-white py-6">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
             <img 
@@ -12,10 +12,9 @@ export default function Header() {
             <h1 className="text-xl font-bold">Dev Guides</h1>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Home</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Tutorials</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Documentation</a>
-            <a href="#" className="text-gray-300 hover:text-white transition-colors">Community</a>
+            <a href="/livestream" className="text-gray-300 hover:text-white transition-colors">Livestream</a>
+            <a href="/ai-transcription" className="text-gray-300 hover:text-white transition-colors">AI Transcription</a>
+            <a href="/ai-object-detection" className="text-gray-300 hover:text-white transition-colors">AI Object Detection</a>
           </nav>
           <div className="flex items-center space-x-4">
             <a 

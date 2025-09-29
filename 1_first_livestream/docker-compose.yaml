@@ -1,0 +1,35 @@
+name: Wowza Streaming Engine Trial
+services:
+    trial:
+        hostname: wse.docker
+        image: wowza/wowza-streaming-engine:latest-trial
+        environment:
+            - WSE_LICENSE_KEY=YOUR_LICENSE_KEY_HERE
+            - ADMIN_USER=admin
+            - ADMIN_PASSWORD=password
+            - IPWHITELIST=*
+            - TRANSCODER=disabled #enabled | disabled | remove to not change
+            - LOG_LEVEL=WARN #DEBUG INFO WARN ERROR
+            - SIMU_LIVE=enabled #enabled | disabled | remove to not change
+        #to persist the configurations between starts of Wowza Streaming Engine, uncomment the lines below:
+        # volumes:
+        #  - ./wse/applications:/usr/local/WowzaStreamingEngine/applications
+        #  - ./wse/conf:/usr/local/WowzaStreamingEngine/conf
+        #  - ./wse/content:/usr/local/WowzaStreamingEngine/content
+        #  - ./wse/transcoder:/usr/local/WowzaStreamingEngine/transcoder
+        ports:
+            - 80:80
+            - 443:443
+            - 1935:1935
+            - 8087:8087
+            - 6970-6999:6970-6999/udp
+            - 10000:10000/udp
+
+    manager:
+        hostname: wsem.docker
+        image: wowza/wowza-streaming-engine-manager:latest
+        environment:
+            - LOG_LEVEL=WARN #DEBUG INFO WARN ERROR
+            - WSE_HOST=http://wse.docker:8087
+        ports:
+            - 8088:8080
