@@ -125,10 +125,15 @@ export default function LiveStreamPage() {
                 /> */}
               </div>
             </Card>
+
+            <div className="text-center mt-4">
+              <p className="text-sm text-muted-foreground mb-2">Stream URL:</p>
+              <span className="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-md">
+                {videoUrl}
+              </span>
+            </div>
+            
           </div>
-
-
-          
 
           {/* Transcript Section */}
           <div className="space-y-4 order-3 lg:order-2">

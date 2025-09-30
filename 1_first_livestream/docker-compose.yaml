@@ -4,7 +4,7 @@ services:
         hostname: wse.docker
         image: wowza/wowza-streaming-engine:latest-trial
         environment:
-            - WSE_LICENSE_KEY=YOUR_LICENSE_KEY_HERE
+            - WSE_LICENSE_KEY=ET1B4-aKdrD-QRDrm-Yp8Hf-jKBvM-RQ6RA-6RVaakyrTnAJ
             - ADMIN_USER=admin
             - ADMIN_PASSWORD=password
             - IPWHITELIST=*
