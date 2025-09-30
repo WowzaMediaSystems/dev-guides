@@ -112,4 +112,5 @@ npm run dev
 
 In subsequent guides, we'll go deeper into:
 - Customizing Wowza Streaming Engine to add custom modules and graphical overlays
-- Digging deeper into the 
+- Customizing the user experience in FlowPlayer
+- Using new and upcoming AI features to provide live subtitling, language translation, and object detection.
