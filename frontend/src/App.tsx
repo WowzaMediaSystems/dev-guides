@@ -7,6 +7,7 @@ import ObjectDetectionPage from "./pages/ObjectDetection";
 import VideoTranscriptPage from "./pages/VideoTranscript";
 import NotFound from "./pages/NotFound";
 import LiveStreamPage from "./pages/LiveStream";
+import ComingSoonPage from "./pages/ComingSoon";
 
 const queryClient = new QueryClient();
 
@@ -19,8 +20,8 @@ const App = () => (
         <Routes>
           <Route path="/" element={<LiveStreamPage />} />
           <Route path="/livestream" element={<LiveStreamPage />} />
-          <Route path="/transcription" element={<VideoTranscriptPage />} />
-          <Route path="/object-detection" element={<ObjectDetectionPage />} />
+          <Route path="/ai-transcription" element={<ComingSoonPage />} />
+          <Route path="/ai-object-detection" element={<ComingSoonPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
