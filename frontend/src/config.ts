@@ -1,4 +1,4 @@
-export const FLOWPLAYER_TOKEN = import.meta.env.VITE_FLOWPLAYER_TOKEN 
+export const FLOWPLAYER_TOKEN = import.meta.env.FLOWPLAYER_TOKEN 
 
 
 // Stream URL to use in /obj-detection-ibc page

@@ -1,13 +1,21 @@
 # Starting Your First Livestream
 
-In just a few minutes we'll set up and play your first livestream with Wowza Streaming Engine, show you how to embed FlowPlayer to create custom user experiences, and also how you can broadcast it to other services like Youtube or Facebook Live.
+In just a few minutes we'll set up and play your first livestream with Wowza Streaming Engine (WSE), show you how to embed FlowPlayer to create custom user experiences, and also how you can broadcast it to other services like Youtube or Facebook Live.
 
 ```
 [TODO] EMBED WALKTHROUGH VIDEO HERE
 ```
 
 # Step 1: Sign up and get your trial license keys
-1. TODO: Signup for free trial, get WSE license key, get Flowplayer token
+1. [Sign up](https://www.wowza.com/free-trial) for a free trial of Wowza Streaming Engine.
+2. Once you've completed the registration process, you'll get your trial license key.
+3. [Sign in](https://auth.wowza.com/login) to the Wowza portal to get your Flowplayer video player trial token - you'll need this to later embed it in a custom page.
+4. Go to [My Account --> Products](https://portal.wowza.com/account/products), start a Wowza Video trial and then launch Wowza Video.
+![alt text](assets/1_license-products.png)
+5. Create a new Flowplayer trial token and store it in a secure place. 
+![alt text](assets/1_license-flowplayer-token.png)
+
+
 
 # Step 2: Clone the Dev Guides Github Repo
 Clone our Dev Guides Github repo locally - it has Docker files for easily deploying Wowza Streaming Engine, sample code for creating backend modules, and frontend code samples, too.
@@ -78,6 +86,11 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 @flowplayer/player
 @flowplayer/react-flowplayer
 ```
+
+3. Create a `.env` environment file in the `/frontend` folder to securely share your Flowplayer trial token with the web app.
+```
+FLOWPLAYER_TOKEN=YOUR_FLOWPLAYER_TOKEN_HERE
+``` 
 
 3. Start the web app by typing `npm run dev`. The web app is listening on localhost:8080.
 ```
