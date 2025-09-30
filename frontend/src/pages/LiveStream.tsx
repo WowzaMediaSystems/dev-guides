@@ -133,8 +133,7 @@ export default function LiveStreamPage() {
               <div className="space-y-6">
                 <div className="text-center mt-4">
                   <p className="text-sm text-muted-foreground mb-2">
-                    Here is the playback URL configured in the config.ts file of
-                    this project.
+                    Here is the playback URL of the stream from Wowza Streaming Engine, configured in the config.ts file of this project.
                   </p>
                   <span className="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-md">
                     {videoUrl}
