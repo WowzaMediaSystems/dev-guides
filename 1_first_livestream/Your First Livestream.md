@@ -1,8 +1,20 @@
 # Starting Your First Livestream
 
-In just a few minutes we'll set up and play your first livestream with Wowza Streaming Engine, show you how to embed FlowPlayer to create custom user experience, and also how you can broadcast it to other services like Youtube or Facebook Live.
+In just a few minutes we'll set up and play your first livestream with Wowza Streaming Engine, show you how to embed FlowPlayer to create custom user experiences, and also how you can broadcast it to other services like Youtube or Facebook Live.
 
-# Step 1: Deploy Wowza Streaming Engine using Docker
+```
+[TODO] EMBED WALKTHROUGH VIDEO HERE
+```
+
+# Step 1: Sign up and get your trial license keys
+1. TODO: Signup for free trial, get WSE license key, get Flowplayer token
+
+# Step 2: Clone the Dev Guides Github Repo
+Clone our Dev Guides Github repo locally - it has Docker files for easily deploying Wowza Streaming Engine, sample code for creating backend modules, and frontend code samples, too.
+
+https://github.com/WowzaMediaSystems/dev-guides
+
+# Step 3: Deploy Wowza Streaming Engine using Docker
 
 1. Download and install [Docker](https://docker.com) on your computer.
 2. Download the Docker Compose file in our Dev Guides Github [repo](https://github.com/WowzaMediaSystems/dev-guides/tree/main/1_first_livestream).
@@ -15,7 +27,7 @@ In just a few minutes we'll set up and play your first livestream with Wowza Str
     docker compose up
 ```
 
-# Step 2: Download and Install OBS Studio
+# Step 4: Start a Live Stream from OBS Studio
 [OBS Studio](https://obsproject.com/) is free and open source software for video recording and live streaming. We'll use this to create a live stream from your local computer using your webcam and microphone.
 
 1. Open OBS Studio
@@ -28,3 +40,76 @@ In just a few minutes we'll set up and play your first livestream with Wowza Str
 
 4. You should see your webcam feed now
 ![alt text](assets/1_obs-webcam-image.png)
+
+5. Click on Settings (lower right) and click on `Stream`
+![alt text](assets/1_obs-stream-settings.png)
+
+6. In the Destination section, set the Server and Stream Key
+```
+Server: rtmp://localhost/live
+Stream Key: myStream
+```
+7.  Click OK, then `Start Streaming`.
+
+
+# Step 5: Review the settings in Wowza Streaming Engine
+Let's take a quick look inside Wowza Streaming Engine Manager to make sure our feed from OBS is streaming correctly.
+
+1. [Log in](http://localhost:8088/login.htm?host=http://wse.docker:8087) to Wowza Streaming Engine Manager using the admin credentials you set in the docker-compose.yaml file.
+![alt text](assets/1_wse-login.png)
+
+2. Once you've signed in, click on Applications in the top navigation, then on `live --> Incoming Streams`.  You should see `myStream` that you started from OBS is now active and Wowza Streaming Engine is receiving the stream data.
+![alt text](assets/1_wse-application-live.png)
+
+3. You can also choose to broadcast your stream to other streaming destinations like Youtube and Facebook Live, but in this tutorial we're just going to focus on streaming to a custom web page.
+![alt text](assets/1_wse-stream-targets.png)
+
+
+# Step 6: Embed the Live Stream In a Web App Using Flowplayer
+We've built sample web pages using React to show you how to embed Wowza Streaming Engine streams using FlowPlayer, our HTML5 video player for HLS and MPEG-DASH playback for browsers and devices.
+
+https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
+
+1. Make sure `node.js` is installed on your machine.  If not, follow these [installation instructions]( https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+
+2. In a terminal window, navigate to the `/frontend` folder and install the node packages by typing `npm install`.  Included in the `package.json` file are the FlowPlayer React components to embed them in your web page:
+
+```
+@flowplayer/player
+@flowplayer/react-flowplayer
+```
+
+3. Start the web app by typing `npm run dev`. The web app is listening on localhost:8080.
+```
+npm run dev
+```
+![alt text](assets/1_npm-run-dev.png)
+
+4. Open http://localhost:8080/ and you'll the live stream embedded in the web page.
+![alt text](assets/1_web-page.png)
+
+5. Embedding FlowPlayer in the [page](https://github.com/WowzaMediaSystems/dev-guides/blob/main/frontend/src/pages/LiveStream.tsx) requires providing the stream URL from Wowza Streaming Engine as well as the FlowPlayer token you got as part of the trial signup process.
+
+```
+<Flowplayer
+    src={videoUrl}
+    token={FLOWPLAYER_TOKEN}
+    ref={playerRef}
+    opts={{
+    ui: 1024,
+    asel: true,
+    fullscreen: false,
+    autoplay: true,
+    lang: "en",
+    }}
+    onError={(error) => {
+        console.error("Flowplayer component error:", error);
+    }}
+/>
+```
+
+# You Did It!
+
+In subsequent guides, we'll go deeper into:
+- Customizing Wowza Streaming Engine to add custom modules and graphical overlays
+- Digging deeper into the 
