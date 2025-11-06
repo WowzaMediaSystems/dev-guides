@@ -1,4 +1,4 @@
-export const FLOWPLAYER_TOKEN = import.meta.env.FLOWPLAYER_TOKEN 
+export const FLOWPLAYER_TOKEN = import.meta.env.VITE_FLOWPLAYER_TOKEN 
 
 export const DEFAULT_OBJ_DETECTION_STREAM_URL = "https://triviaelephant.s3.amazonaws.com/id3/testhls/playlist.m3u8";
 
