@@ -19,16 +19,16 @@ import Typewriter from "typewriter-effect";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const sampleTranscript = [
-  {
-    timestamp: "00:00",
-    text: "Welcome to this comprehensive tutorial on modern web development. Today we'll explore the latest techniques and best practices that every developer should know.",
-  },
-  {
-    timestamp: "00:15",
-    text: "We'll start by discussing the fundamentals of responsive design and how to create layouts that work seamlessly across all device sizes.",
-  },
-];
+// const sampleTranscript = [
+//   {
+//     timestamp: "00:00",
+//     text: "Welcome to this comprehensive tutorial on modern web development. Today we'll explore the latest techniques and best practices that every developer should know.",
+//   },
+//   {
+//     timestamp: "00:15",
+//     text: "We'll start by discussing the fundamentals of responsive design and how to create layouts that work seamlessly across all device sizes.",
+//   },
+// ];
 
 export default function LiveStreamPage() {
   const playerRef = useRef<HTMLDivElement | null>(null);
@@ -69,9 +69,9 @@ export default function LiveStreamPage() {
       console.error("FLOWPLAYER - ENDED:", e);
     });
 
-    player.on(FINISHED, (e) => {
-      console.error("FLOWPLAYER - FINISHED:", e);
-    });
+    // player.on(FINISHED, (e) => {
+    //   console.error("FLOWPLAYER - FINISHED:", e);
+    // });
 
     return () => {
       // Cleanup on unmount
@@ -88,10 +88,10 @@ export default function LiveStreamPage() {
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            Wowza Livestreaming
+            Wowza Live Streaming
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Play a live stream from Wowza Streaming Engine
+            With Wowza Streaming Engine
           </p>
         </div>
 
@@ -121,19 +121,11 @@ export default function LiveStreamPage() {
 
           <div className="space-y-4 order-3 lg:order-2">
             <Card className="shadow-elegant aspect-video flex flex-col">
-              <div className="p-6 border-b border-border flex-shrink-0">
-                <h2 className="text-2xl font-semibold text-foreground">
-                  Welcome to your first livestream!
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Great job getting this far!
-                </p>
-              </div>
-
               <div className="space-y-6">
                 <div className="text-center mt-4">
                   <p className="text-sm text-muted-foreground mb-2">
-                    Here is the playback URL of the stream from Wowza Streaming Engine, configured in the config.ts file of this project.
+                    Here is the playback URL of the stream from Wowza Streaming
+                    Engine, configured in the config.ts file of this project.
                   </p>
                   <span className="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-md">
                     {videoUrl}
@@ -143,6 +135,15 @@ export default function LiveStreamPage() {
             </Card>
           </div>
         </div>
+      </div>
+
+      <div className="mb-8 text-center">
+        <p className="text-sm text-muted-foreground mb-2">
+          Source code for this demo is available on GitHub: <br />{" "}
+          <a href="https://github.com/WowzaMediaSystems/dev-guides">
+            https://github.com/WowzaMediaSystems/dev-guides
+          </a>
+        </p>
       </div>
 
       <Footer />

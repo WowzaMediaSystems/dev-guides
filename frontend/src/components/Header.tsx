@@ -9,7 +9,7 @@ export default function Header() {
               alt="Wowza Logo" 
               className="h-8 w-auto"
             />
-            <h1 className="text-xl font-bold">Dev Guides</h1>
+            <h1 className="text-xl font-bold">Developer Demos</h1>
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="/livestream" className="text-gray-300 hover:text-white transition-colors">Livestream</a>
