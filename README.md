@@ -1,10 +1,8 @@
-# Starting Your First Livestream
+# Creating a live stream with Flowplayer and Wowza Streaming Engine
 
-In just a few minutes we'll set up and play your first livestream with Wowza Streaming Engine (WSE), show you how to embed FlowPlayer to create custom user experiences, and also how you can broadcast it to other services like Youtube or Facebook Live.
+Set up and play your first live stream with Wowza Streaming Engine (WSE), and FlowPlayer to create a custom web experience.
 
-```
-[TODO] EMBED WALKTHROUGH VIDEO HERE
-```
+To view the video tutorial, visit [https://www.wowza.com/developer](https://www.wowza.com/developer).
 
 # Step 1: Sign up and get your trial license keys
 1. [Sign up](https://www.wowza.com/free-trial) for a free trial of Wowza Streaming Engine.
@@ -25,20 +23,17 @@ https://github.com/WowzaMediaSystems/dev-guides
 # Step 3: Deploy Wowza Streaming Engine using Docker
 
 1. Download and install [Docker](https://docker.com) on your computer.
-2. Download the Docker Compose file in our Dev Guides Github [repo](https://github.com/WowzaMediaSystems/dev-guides/tree/main/1_first_livestream).
-3. Copy the `.env.example` file to `.env`:
-    ```sh
-    cp .env.example .env
-    ```
-4. Open `.env` and add your Wowza Streaming Engine license key:
+2. Create a `.env` file within the `/1_first_livestream` subfolder of the Dev Guides repo:
+    - Copy the `.env.example` file to `.env`:
+    - Open `.env` and add your Wowza Streaming Engine license key:
     ```
     WSE_LICENSE_KEY=YOUR_LICENSE_KEY_HERE
     ```
 5. The Docker Compose setup will automatically use the value from your `.env` file. You can also set your admin username and password in `docker-compose.yaml` if you want to change them from the default.
 
-![Docker compose file](assets/1_docker-compose.png)
+![Docker compose file](assets/1_docker-compose2.png)
 
-6. Start the Docker images by running the following command in your terminal:
+6. Start the Docker images. Open a terminal window, go to the `1_first_livestream` folder and run the following command:
     ```sh
     docker compose up
     ```
@@ -71,7 +66,7 @@ https://github.com/WowzaMediaSystems/dev-guides
 Server: rtmp://localhost/live
 Stream Key: myStream
 ```
-7.  Click OK, then `Start Streaming`.
+7.  Click OK, then click `Start Streaming`.
 
 
 # Step 5: Review the settings in Wowza Streaming Engine
@@ -83,12 +78,9 @@ Let's take a quick look inside Wowza Streaming Engine Manager to make sure our f
 2. Once you've signed in, click on Applications in the top navigation, then on `live --> Incoming Streams`.  You should see `myStream` that you started from OBS is now active and Wowza Streaming Engine is receiving the stream data.
 ![alt text](assets/1_wse-application-live.png)
 
-3. You can also choose to broadcast your stream to other streaming destinations like Youtube and Facebook Live, but in this tutorial we're just going to focus on streaming to a custom web page.
-![alt text](assets/1_wse-stream-targets.png)
 
-
-# Step 6: Embed the Live Stream In a Web App Using Flowplayer
-We've built sample web pages using React to show you how to embed Wowza Streaming Engine streams using FlowPlayer, our HTML5 video player for HLS and MPEG-DASH playback for browsers and devices.
+# Step 6: Embed the Live Stream Using Wowza Flowplayer
+Open the `/frontend` subfolder in the repo to see how to embed Wowza Streaming Engine streams using Wowza FlowPlayer, the HTML5 video player for HLS and MPEG-DASH playback for browsers and devices.
 
 https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 
@@ -118,17 +110,19 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 ![alt text](assets/1_npm-run-dev.png)
 
 7. Open http://localhost:8080/ and you'll see the live stream embedded in the web page.
-#
-# Notes on Frontend Environment Files
-#
+
+## Notes on Frontend Environment Files
+
 - The `.env.example` file in `/frontend` provides a template for required environment variables. Copy it to `.env` and fill in your values.
 - The `.env` file is ignored by git and should not be committed to version control.
 - The Flowplayer token in `.env` is required to embed the player in your web app.
+
 ![alt text](assets/1_web-page.png)
 
 5. Embedding FlowPlayer in the [page](https://github.com/WowzaMediaSystems/dev-guides/blob/main/frontend/src/pages/LiveStream.tsx) requires providing the stream URL from Wowza Streaming Engine as well as the FlowPlayer token you got as part of the trial signup process.
+    - In the `frontend` app these variables are set in `config.ts`.
 
-```
+```tsx
 <Flowplayer
     src={videoUrl}
     token={FLOWPLAYER_TOKEN}
@@ -146,7 +140,7 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 />
 ```
 
-# You Did It!
+# Next Steps
 
 In subsequent guides, we'll go deeper into:
 - Customizing Wowza Streaming Engine to add custom modules and graphical overlays
