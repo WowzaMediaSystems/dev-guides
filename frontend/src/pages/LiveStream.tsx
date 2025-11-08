@@ -1,3 +1,8 @@
+/*
+ * This code and all components (c) Copyright 2025, Wowza Media Systems, LLC. All rights reserved.
+ * This code is licensed pursuant to the Wowza Public License version 1.0, available at https://github.com/WowzaMediaSystems/dev-guides/blob/main/LICENSE.txt.
+ */
+
 import { useState, useRef, useEffect } from "react";
 import "@flowplayer/player/flowplayer.css";
 import Flowplayer, { useFlowplayer } from "@flowplayer/react-flowplayer";
@@ -7,7 +12,6 @@ import {
   STANDARD_ERROR,
   ENDED,
   ERROR,
-  FINISHED,
 } from "@flowplayer/player/core/events";
 import type { Player } from "@flowplayer/player";
 import { setupFlowplayer } from "@/lib/setup-flowplayer";
@@ -19,16 +23,6 @@ import Typewriter from "typewriter-effect";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// const sampleTranscript = [
-//   {
-//     timestamp: "00:00",
-//     text: "Welcome to this comprehensive tutorial on modern web development. Today we'll explore the latest techniques and best practices that every developer should know.",
-//   },
-//   {
-//     timestamp: "00:15",
-//     text: "We'll start by discussing the fundamentals of responsive design and how to create layouts that work seamlessly across all device sizes.",
-//   },
-// ];
 
 export default function LiveStreamPage() {
   const playerRef = useRef<HTMLDivElement | null>(null);

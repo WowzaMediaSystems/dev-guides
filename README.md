@@ -1,6 +1,6 @@
 # Developer Guide: Creating a live stream with Flowplayer and Wowza Streaming Engine
 
-Set up and play your first live stream with Wowza Streaming Engine (WSE), and FlowPlayer to create a custom web experience.  The code samnples provided here are for demonstration purposes only, and are provided via the [Wowza Public License]().
+Set up and play your first live stream with Wowza Streaming Engine (WSE), and FlowPlayer to create a custom web experience.  The code samnples provided here are for demonstration purposes only, and are provided via the [Wowza Public License](https://github.com/WowzaMediaSystems/dev-guides/blob/main/LICENSE.txt).
 
 To view the video tutorial, visit [https://www.wowza.com/developer](https://www.wowza.com/developer).
 
