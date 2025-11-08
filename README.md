@@ -111,11 +111,7 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 
 7. Open http://localhost:8080/ and you'll see the live stream embedded in the web page.
 
-## Notes on Frontend Environment Files
 
-- The `.env.example` file in `/frontend` provides a template for required environment variables. Copy it to `.env` and fill in your values.
-- The `.env` file is ignored by git and should not be committed to version control.
-- The Flowplayer token in `.env` is required to embed the player in your web app.
 
 ![alt text](assets/1_web-page.png)
 
@@ -139,6 +135,12 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
     }}
 />
 ```
+
+## Notes on Frontend Environment Files
+
+- The `.env.example` file in `/frontend` provides a template for required environment variables. Copy it to `.env` and fill in your values.
+- The `.env` file is ignored by git and should not be committed to version control.
+- The Flowplayer token in `.env` is required to embed the player in your web app.
 
 # Next Steps
 
