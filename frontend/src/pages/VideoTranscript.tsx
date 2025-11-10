@@ -14,6 +14,8 @@ import { DEFAULT_TRANSCRIPTION_STREAM_URL, FLOWPLAYER_TOKEN } from "../config";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
 import Typewriter from "typewriter-effect";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const sampleTranscript = [
   {
@@ -95,14 +97,15 @@ export default function VideoTranscript() {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            AI Livestream
+            Wowza AI Live Subtitles
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Learn the latest techniques and best practices for building modern
-            web applications
+            Real-time AI generated subtitles and language translation
           </p>
         </div>
 
@@ -219,6 +222,17 @@ export default function VideoTranscript() {
           </div>
         </div>
       </div>
+
+      <div className="mb-8 text-center">
+        <p className="text-sm text-muted-foreground mb-2">
+          Source code for this demo is available on GitHub: <br />{" "}
+          <a href="https://github.com/WowzaMediaSystems/dev-guides">
+            https://github.com/WowzaMediaSystems/dev-guides
+          </a>
+        </p>
+      </div>
+
+      <Footer />
     </div>
   );
 }
