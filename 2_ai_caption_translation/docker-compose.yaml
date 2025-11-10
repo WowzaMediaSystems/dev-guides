@@ -2,10 +2,10 @@ name: Wowza Streaming Engine Caption Handlers
 services:
     wse:
         hostname: wse.docker
-        image: wowza/wowza-streaming-engine:latest-trial
+        image: wowza/wowza-streaming-engine:4.9.4-trial
         platform: linux/amd64
         environment:
-            - WSE_LICENSE_KEY=ET1B4-4K83e-MXzEP-XGNzV-EJmut-67htG-8hJKKtcQYanV
+            - WSE_LICENSE_KEY=$WSE_LICENSE_KEY
             - ADMIN_USER=admin
             - ADMIN_PASSWORD=password
             - IPWHITELIST=*
@@ -42,16 +42,40 @@ services:
     whisper_server:
         hostname: whisper.server
         image: wowza/whisper_streaming:latest
-        #platform: linux/arm64
+        # runtime: nvidia
+        # deploy:
+        #   resources:
+        #     reservations:
+        #       devices:
+        #         - driver: nvidia
+        #           capabilities: [gpu]
+        #           count: 1
         environment:
-            - MODEL=tiny.en # tiny.en, base.en, small.en, medium.en, large-v3
+            - MODEL=tiny.en # tiny.en, base.en, small.en, medium.en, large-v3, large-v3-turbo
             - LOG_LEVEL=INFO
             - MIN_CHUNK_SIZE=1
-            - REPORT_LANGUAGE=en
+            - SOURCE_LANGUAGE=en
+            - REPORT_LANGUAGES=en
+            # - TRANSLATE_HOST=libretranslate.server
+            # - TRANSLATE_PORT=5000
+            # - USE_GPU=True
+            # - FP16=true            
         ports:
             - 3000:3000
         volumes:
             - ./model_cache:/tmp
+
+    # libretranslate_server:
+    #     hostname: libretranslate.server
+    #     image: libretranslate/libretranslate:latest
+    #     # image: libretranslate/libretranslate:latest-cuda 
+    #     environment:
+    #         - LT_LOAD_ONLY=en,fr,es,de,ja
+    #     ports:
+    #         - 5001:5000
+    #     volumes:
+    #         - /tmp/libretranslate_models_cache:/home/libretranslate/.local
+
 
     manager:
         hostname: wsem.docker
