@@ -14,6 +14,8 @@ import { DEFAULT_TRANSCRIPTION_STREAM_URL, FLOWPLAYER_TOKEN } from "../config";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card } from "@/components/ui/card";
 import Typewriter from "typewriter-effect";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const sampleTranscript = [
   {
@@ -95,14 +97,15 @@ export default function VideoTranscript() {
 
   return (
     <div className="min-h-screen bg-gradient-subtle">
+
+      <Header />
       <div className="container mx-auto px-4 py-8">
         <div className="mb-8 text-center">
           <h1 className="text-4xl font-bold text-foreground mb-4">
-            AI Livestream
+            Wowza AI Live Subtitles
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Learn the latest techniques and best practices for building modern
-            web applications
+            Real-time AI generated subtitles and language translation
           </p>
         </div>
 
@@ -124,13 +127,6 @@ export default function VideoTranscript() {
                   }}
                 />
 
-                {/* <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Modern Web Development Tutorial"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                /> */}
               </div>
             </Card>
           </div>
@@ -163,62 +159,40 @@ export default function VideoTranscript() {
                 </div>
               </div>
 
-              {/* <ScrollArea className="h-[300px] p-6">
-                <div className="space-y-4">
-                  <div className="group hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors">
-                    <div className="flex items-center gap-4">
-                      <span className="inline-flex items-center justify-center w-16 h-6 bg-primary/10 text-primary text-xs font-mono rounded-md flex-shrink-0">
-                        00:00
-                      </span>
-                      <p className="text-foreground text-sm leading-relaxed">
-                        Welcome to this comprehensive tutorial on modern web
-                        development. Today we'll explore the latest techniques
-                        and best practices that every developer should know.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollArea> */}
+
             </Card>
           </div>
 
-          {/* Transcript Section */}
           <div className="space-y-4 order-3 lg:order-2">
             <Card className="shadow-elegant aspect-video flex flex-col">
-              <div className="p-6 border-b border-border flex-shrink-0">
-                <h2 className="text-2xl font-semibold text-foreground">
-                  Video Transcript
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Follow along with the complete transcript
-                </p>
-              </div>
-
-              <ScrollArea className="flex-1 p-6">
-                <div className="space-y-6">
-                  {sampleTranscript.map((entry, index) => (
-                    <div
-                      key={index}
-                      className="group hover:bg-muted/50 -mx-2 px-2 py-3 rounded-lg transition-colors"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0">
-                          <span className="inline-flex items-center justify-center w-12 h-8 bg-primary/10 text-primary text-sm font-mono rounded-md">
-                            {entry.timestamp}
-                          </span>
-                        </div>
-                        <p className="text-foreground leading-relaxed text-sm">
-                          {entry.text}
-                        </p>
-                      </div>
-                    </div>
-                  ))}
+              <div className="space-y-6">
+                <div className="text-center mt-4">
+                <p className="text-sm text-muted-foreground mb-2">
+                    Here is the playback URL of the stream from Wowza Streaming
+                    Engine, configured in the config.ts file of this project.
+                  </p>
+                  <span className="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-md">
+                    {videoUrl}
+                  </span>
                 </div>
-              </ScrollArea>
+              </div>
             </Card>
           </div>
         </div>
       </div>
+
+
+
+      <div className="mb-8 text-center">
+        <p className="text-sm text-muted-foreground mb-2">
+          Source code for this demo is available on GitHub: <br />{" "}
+          <a href="https://github.com/WowzaMediaSystems/dev-guides">
+            https://github.com/WowzaMediaSystems/dev-guides
+          </a>
+        </p>
+      </div>
+
+      <Footer />
     </div>
   );
 }

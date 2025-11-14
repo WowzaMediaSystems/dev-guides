@@ -25,7 +25,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<LiveStreamPage />} />
           <Route path="/livestream" element={<LiveStreamPage />} />
-          <Route path="/ai-transcription" element={<ComingSoonPage />} />
+          <Route path="/ai-transcription" element={<VideoTranscriptPage />} />
           <Route path="/ai-object-detection" element={<ComingSoonPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
