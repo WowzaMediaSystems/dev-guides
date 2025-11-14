@@ -127,13 +127,6 @@ export default function VideoTranscript() {
                   }}
                 />
 
-                {/* <iframe
-                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                  title="Modern Web Development Tutorial"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                /> */}
               </div>
             </Card>
           </div>
@@ -166,22 +159,7 @@ export default function VideoTranscript() {
                 </div>
               </div>
 
-              {/* <ScrollArea className="h-[300px] p-6">
-                <div className="space-y-4">
-                  <div className="group hover:bg-muted/50 -mx-2 px-2 py-2 rounded-lg transition-colors">
-                    <div className="flex items-center gap-4">
-                      <span className="inline-flex items-center justify-center w-16 h-6 bg-primary/10 text-primary text-xs font-mono rounded-md flex-shrink-0">
-                        00:00
-                      </span>
-                      <p className="text-foreground text-sm leading-relaxed">
-                        Welcome to this comprehensive tutorial on modern web
-                        development. Today we'll explore the latest techniques
-                        and best practices that every developer should know.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </ScrollArea> */}
+
             </Card>
           </div>
 
@@ -189,12 +167,14 @@ export default function VideoTranscript() {
           <div className="space-y-4 order-3 lg:order-2">
             <Card className="shadow-elegant aspect-video flex flex-col">
               <div className="p-6 border-b border-border flex-shrink-0">
-                <h2 className="text-2xl font-semibold text-foreground">
-                  Video Transcript
-                </h2>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Follow along with the complete transcript
-                </p>
+
+                <p className="text-sm text-muted-foreground mb-2">
+                    Here is the playback URL of the stream from Wowza Streaming
+                    Engine, configured in the config.ts file of this project.
+                  </p>
+                  <span className="inline-flex items-center justify-center px-4 py-2 bg-primary/10 text-primary text-sm font-mono rounded-md">
+                    {videoUrl}
+                  </span>
               </div>
 
               <ScrollArea className="flex-1 p-6">
