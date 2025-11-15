@@ -148,5 +148,5 @@ https://github.com/WowzaMediaSystems/dev-guides/tree/main/frontend
 
 6. Open http://localhost:8080/ai-transcription and you'll see the live stream embedded in the web page with captions displayed overlayed on the video and on the web page.
 
-![alt text](../assets/1_web-page.png)
+![alt text](../assets/2_live-subtitle-frontend.png)
 
