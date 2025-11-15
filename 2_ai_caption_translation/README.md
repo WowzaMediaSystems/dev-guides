@@ -9,7 +9,12 @@ To view the video tutorial, visit [https://www.wowza.com/developer-ai-subtitles]
 # How It Works
 This demo uses two GitHub repos - one for Wowza Streaming Engine and performs the speech recognition and translation.  The other repo provides a frontend React web app to show how to embed the live stream and gather the AI-generated text tracks to create custom solutions to listen for specific keywords or provide summaries or transcripts of video streams.
 
+Real-time speech-to-text:
+![alt text](../assets/2_live-subtitle-overlay.png)
+
+Real-time language translation:
 ![alt text](../assets/2_live-translation-overlay.png)
+
 
 ## Speech recognition and machine translation
 This demo utilizes two Github repos - one for Wowza Streaming Engine configured to work with OpenAI's [`whisper`](https://github.com/openai/whisper), a general purpose speech recognition model, and [`LibreTranslate`](https://libretranslate.com/), a machine translation API. Both are available as open-source projects. 
